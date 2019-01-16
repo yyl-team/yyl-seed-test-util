@@ -2,6 +2,8 @@ const tUtil = require('../lib/test-util.js');
 const path = require('path');
 const fs = require('fs');
 const util = require('yyl-util');
+const request = require('yyl-request');
+const extOs = require('yyl-os');
 
 const TEST_CTRL = {
   FRAG: true,
@@ -94,5 +96,20 @@ if (TEST_CTRL.PARSE_CONFIG) {
 }
 
 if (TEST_CTRL.SERVER) {
+  test('tUtil.server.start(dist, port)', async () => {
+    const demoPath = path.join(__dirname, './demo');
+    await tUtil.server.start(demoPath, 5000);
+    const [err, res] = await request('http://127.0.0.1:5000/config.js');
 
+    expect(err).toEqual(null);
+    if (res) {
+      expect(res.statusCode).toEqual(200);
+    }
+  });
+
+  test('tUtil.server.abort()', async () => {
+    await tUtil.server.abort();
+    const canUse = await extOs.checkPort(5000);
+    expect(canUse).toEqual(true);
+  });
 }
