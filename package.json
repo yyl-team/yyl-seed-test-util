@@ -1,0 +1,35 @@
+{
+  "name": "yyl-seed-test-util",
+  "version": "0.1.0",
+  "description": "yyl seed test util",
+  "main": "./lib/test-util.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "test": "jest ./test/ --env=node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/yyl-seed-test-util.git"
+  },
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/yyl-seed-test-util/issues"
+  },
+  "homepage": "https://github.com/jackness1208/yyl-seed-test-util#readme",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "http-shutdown": "^1.2.0",
+    "serve-favicon": "^2.5.0",
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.2",
+    "yyl-fs": "^0.2.0",
+    "yyl-os": "^0.2.0",
+    "yyl-util": "^2.1.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
