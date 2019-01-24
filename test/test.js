@@ -27,8 +27,8 @@ if (TEST_CTRL.FRAG) {
     expect(fs.readdirSync(FRAG_PATH).length).toEqual(0);
   });
 
-  test('tUtil.frag.destory()', async () => {
-    await tUtil.frag.destory();
+  test('tUtil.frag.destroy()', async () => {
+    await tUtil.frag.destroy();
     expect(fs.existsSync(FRAG_PATH)).toEqual(false);
   });
 }
@@ -43,7 +43,7 @@ if (TEST_CTRL.BUILD_FILES) {
     expect(fs.existsSync(iPath)).toEqual(true);
     expect(fs.statSync(iPath).isDirectory()).toEqual(false);
 
-    await tUtil.frag.destory();
+    await tUtil.frag.destroy();
   });
 
   test('tUtil.buildFiles(dirPath)', async () => {
@@ -56,7 +56,7 @@ if (TEST_CTRL.BUILD_FILES) {
     expect(fs.existsSync(iPath)).toEqual(true);
     expect(fs.statSync(iPath).isDirectory()).toEqual(true);
 
-    await tUtil.frag.destory();
+    await tUtil.frag.destroy();
   });
 
   test('tUtil.buildFiles(arr)', async () => {
@@ -75,7 +75,7 @@ if (TEST_CTRL.BUILD_FILES) {
     });
 
     expect(r.length).toEqual(arr.length);
-    await tUtil.frag.destory();
+    await tUtil.frag.destroy();
   });
 }
 

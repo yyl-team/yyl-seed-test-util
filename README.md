@@ -17,8 +17,8 @@ const tUtil = require('yyl-seed-test-util');
 /**
  * 批量创建 空文件/目录
  * @param  {string|Array} ctx                path/to/dir/ 或者 path/to/file
- * @return {Promise}      Promise.resolve(r)
- * @param  {Array}        r                  创建的文件列表
+ * @return {Promise}      then(r)
+ *                        - r [Array]        创建的文件列表
  */
 tUtil.buildFiles(ctx);
 ```
@@ -28,8 +28,9 @@ tUtil.buildFiles(ctx);
 ```
 /**
  * 创建临时目录
- * @param  {String} path  临时目录
- * @return {String} rPath 创建的目录路径
+ * @param  {String}  path                   临时目录
+ * @return {Promise} then(iPath)
+ *                   - iPath [String]       创建的目录路径
  */
 tUtil.frag.init(path);
 ```
@@ -38,16 +39,18 @@ tUtil.frag.init(path);
 ```
 /**
  * 重置临时目录
+ * @return {Promsie}
  */
 tUtil.frag.build();
 ```
 
-### tUtil.frag.destory()
+### tUtil.frag.destroy()
 ```
 /**
  * 清除临时目录
+ * @return {Promsie}
  */
-tUtil.frag.destory();
+tUtil.frag.destroy();
 ```
 
 ### tUtil.parseConfig(configPath)
@@ -82,3 +85,6 @@ tUtil.server.start(root, port)
  */
 tUtil.server.abort()
 ```
+
+## 历史记录
+[这里](./history.md)

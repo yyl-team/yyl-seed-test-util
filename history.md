@@ -1,4 +1,7 @@
 # 版本信息
+## 0.1.1(2019-01-24)
+* [ADD] 新增 `tUtil.frag.destroy()`
+* [DEL] 去掉 `tUtil.frag.destory()`
 ## 0.1.0(2019-01-16)
 * [ADD] 新增 `tUtil.buildFiles(ctx)`
 * [ADD] 新增 `tUtil.frag.init(path)`
