@@ -86,6 +86,24 @@ tUtil.server.start(root, port)
 tUtil.server.abort()
 ```
 
+### tUtil.server.getAppSync()
+```
+/**
+ * 返回 server
+ * @return {Object} app
+ */
+tUtil.getAppSync(url)
+```
+
+### tUtil.server.use(middleware)
+```
+/**
+ * 使用中间件
+ * @return {Void}
+ */
+tUtil.server.use(middleware)
+```
+
 ### tUtil.hideUrlTail(url)
 ```
 /**
