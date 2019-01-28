@@ -9,7 +9,8 @@ const TEST_CTRL = {
   FRAG: true,
   BUILD_FILES: true,
   PARSE_CONFIG: true,
-  SERVER: true
+  SERVER: true,
+  HIDE_URL_TAIL: true
 };
 
 
@@ -111,5 +112,19 @@ if (TEST_CTRL.SERVER) {
     await tUtil.server.abort();
     const canUse = await extOs.checkPort(5000);
     expect(canUse).toEqual(true);
+  });
+}
+
+if (TEST_CTRL.HIDE_URL_TAIL) {
+  test('tUtil.hideUrlTail(url)', async () => {
+    const successMap = {
+      'http://www.yy.com/hello.js?a=1': 'http://www.yy.com/hello.js',
+      'http://www.yy.com/hello.js#path=/index': 'http://www.yy.com/hello.js',
+      'http://www.yy.com/hello.js#path=/index?key=val': 'http://www.yy.com/hello.js',
+      'http://www.yy.com/hello.js?key=val#path=/index': 'http://www.yy.com/hello.js'
+    };
+    Object.keys(successMap).forEach((key) => {
+      expect(tUtil.hideUrlTail(key)).toEqual(successMap[key]);
+    });
   });
 }

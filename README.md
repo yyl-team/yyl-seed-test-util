@@ -86,5 +86,15 @@ tUtil.server.start(root, port)
 tUtil.server.abort()
 ```
 
+### tUtil.hideUrlTail(url)
+```
+/**
+ * 去掉 url 的 hash 和 query
+ * @param  {String} url 待处理 url
+ * @return {String} r   处理完成的 url
+ */
+tUtil.hideUrlTail(url)
+```
+
 ## 历史记录
 [这里](./history.md)

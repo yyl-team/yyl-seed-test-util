@@ -1,4 +1,7 @@
 # 版本信息
+## 0.2.0(2019-01-28)
+* [ADD] 新增 `tUtil.hideUrlTail(url)`
+
 ## 0.1.1(2019-01-24)
 * [ADD] 新增 `tUtil.frag.destroy()`
 * [DEL] 去掉 `tUtil.frag.destory()`
