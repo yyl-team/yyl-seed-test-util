@@ -108,6 +108,10 @@ if (TEST_CTRL.SERVER) {
     }
   });
 
+  test('tUtil.server.getAppSync()', async () => {
+    expect(typeof tUtil.server.getAppSync() !== 'undefined').toEqual(true);
+  });
+
   test('tUtil.server.abort()', async () => {
     await tUtil.server.abort();
     const canUse = await extOs.checkPort(5000);

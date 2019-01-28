@@ -1,4 +1,7 @@
 # 版本信息
+## 0.3.0(2019-01-28)
+* [ADD] 新增 `tUtil.getAppSync()`
+
 ## 0.2.0(2019-01-28)
 * [ADD] 新增 `tUtil.hideUrlTail(url)`
 
