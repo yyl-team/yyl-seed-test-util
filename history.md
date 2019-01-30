@@ -1,4 +1,7 @@
 # 版本信息
+## 0.3.1(2019-01-30)
+* [FIX] 修复 `tUtil.server.start()` 在 server 还没关闭时， 调用会报错问题
+
 ## 0.3.0(2019-01-28)
 * [ADD] 新增 `tUtil.getAppSync()`
 
