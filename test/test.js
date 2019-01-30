@@ -106,6 +106,7 @@ if (TEST_CTRL.SERVER) {
     if (res) {
       expect(res.statusCode).toEqual(200);
     }
+    await tUtil.server.start(demoPath, 5000);
   });
 
   test('tUtil.server.getAppSync()', async () => {
