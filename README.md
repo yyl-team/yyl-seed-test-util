@@ -114,5 +114,16 @@ tUtil.server.use(middleware)
 tUtil.hideUrlTail(url)
 ```
 
+### tUtil.initPlugins(plugins, iPath)
+```
+/**
+ * 安装插件
+ * @param  {Array}  plugins
+ * @param  {String} iPath
+ *-@return Promise <any>
+ */
+tUtil.initPlugins(plugins, iPath)
+```
+
 ## 历史记录
 [这里](./history.md)
