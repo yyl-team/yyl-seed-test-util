@@ -1,4 +1,8 @@
 # 版本信息
+## 0.4.0(2019-04-30)
+* [ADD] 新增 `tUtil.initPlugins(plugins, iPath)`
+* [ADD] 新增 `typescript` 声明文件
+
 ## 0.3.1(2019-01-30)
 * [FIX] 修复 `tUtil.server.start()` 在 server 还没关闭时， 调用会报错问题
 

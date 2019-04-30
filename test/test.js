@@ -7,8 +7,9 @@ const extOs = require('yyl-os');
 
 const TEST_CTRL = {
   FRAG: true,
-  BUILD_FILES: true,
+  INIT_PLUGINS: true,
   PARSE_CONFIG: true,
+  BUILD_FILES: true,
   SERVER: true,
   HIDE_URL_TAIL: true
 };
@@ -76,6 +77,32 @@ if (TEST_CTRL.BUILD_FILES) {
     });
 
     expect(r.length).toEqual(arr.length);
+    await tUtil.frag.destroy();
+  });
+}
+
+if (TEST_CTRL.INIT_PLUGINS) {
+  test('tUtil.initPlugins(plugins, iPath)', async() => {
+    await tUtil.frag.init(FRAG_PATH);
+    await tUtil.frag.build();
+
+    // run
+    const testPlugins = ['yyl-flexlayout', 'yyl-os@0.4.0'];
+    await tUtil.initPlugins(testPlugins, FRAG_PATH);
+
+    // check
+    const pkgPath = path.join(FRAG_PATH, 'package.json');
+    const p1Path = path.join(FRAG_PATH, 'node_modules/yyl-flexlayout');
+    const p2Path = path.join(FRAG_PATH, 'node_modules/yyl-os');
+    [pkgPath, p1Path, p2Path].forEach((iPath) => {
+      expect(fs.existsSync(iPath)).toEqual(true);
+    });
+    const p2PkgPath = path.join(p2Path, 'package.json');
+    const ver = require(p2PkgPath).version;
+
+    expect(ver).toEqual('0.4.0');
+
+    // destroy
     await tUtil.frag.destroy();
   });
 }
