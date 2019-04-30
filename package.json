@@ -1,6 +1,6 @@
 {
   "name": "yyl-seed-test-util",
-  "version": "0.4.0-beta1",
+  "version": "0.4.0",
   "description": "yyl seed test util",
   "main": "./lib/test-util.js",
   "types": "./lib/test-util.d.ts",
