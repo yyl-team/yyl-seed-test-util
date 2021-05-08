@@ -150,10 +150,10 @@ if (TEST_CTRL.SERVER) {
 if (TEST_CTRL.HIDE_URL_TAIL) {
   test('tUtil.hideUrlTail(url)', async () => {
     const successMap = {
-      'http://www.yy.com/hello.js?a=1': 'http://www.yy.com/hello.js',
-      'http://www.yy.com/hello.js#path=/index': 'http://www.yy.com/hello.js',
-      'http://www.yy.com/hello.js#path=/index?key=val': 'http://www.yy.com/hello.js',
-      'http://www.yy.com/hello.js?key=val#path=/index': 'http://www.yy.com/hello.js'
+      'http://www.testhost.com/hello.js?a=1': 'http://www.testhost.com/hello.js',
+      'http://www.testhost.com/hello.js#path=/index': 'http://www.testhost.com/hello.js',
+      'http://www.testhost.com/hello.js#path=/index?key=val': 'http://www.testhost.com/hello.js',
+      'http://www.testhost.com/hello.js?key=val#path=/index': 'http://www.testhost.com/hello.js'
     };
     Object.keys(successMap).forEach((key) => {
       expect(tUtil.hideUrlTail(key)).toEqual(successMap[key]);
